@@ -24,7 +24,7 @@ connect.commit()
 connect.close()
 
 
-
+# function to add data in database
 def add():
     conn=sqlite3.connect("employee.db")
     c = conn.cursor()
@@ -40,7 +40,7 @@ def add():
 
 
 
-
+#function to retrieve data from database
 def retrieve():
     conn = sqlite3.connect("employee.db")
     c = conn.cursor()
@@ -62,6 +62,7 @@ def retrieve():
     conn.close()
 
 
+#function to delete data from database
 def delete():
     conn = sqlite3.connect("employee.db")
     c = conn.cursor()
@@ -70,7 +71,7 @@ def delete():
     delete_record.delete(0,END)
     retrieve()
 
-
+#function to edit the data of already existing users
 def edit():
     global editor 
     editor =Tk()
@@ -170,7 +171,7 @@ def update(record_id):
 
 
 
-
+# Labels
 username_label = Label(root,text="Username",font=("Arial Bold",16))
 username_label.place(x=0,y=100)
 
@@ -211,7 +212,7 @@ update_record.place(x=200,y=700,height=30)
 
 
 
-    #Buttons of all
+# Buttons 
 add_button = Button(root,text="Add",font=("Arial Bold",16),command=add)
 add_button.place(x=80,y=500)
 
